@@ -15,32 +15,9 @@
           <label for="employer-name">EmployerName</label><br/>
           <input id="employer-name" type="text" placeholder="Default text">
         </div>
-
         <div class="col">
           <label for="psk">PSK</label><br/>
           <input id="psk" type="text" placeholder="Default text">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <label for="partner-token">Partner Token</label><br/>
-          <input id="partner-token" type="text" placeholder="Default text">
-        </div>
-
-        <div class="col">
-          <label for="event-code">EventCode</label><br/>
-          <input id="event-code" type="text" placeholder="Default text">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <select id="main-select" class="custom-select">
-            <option selected>Select an Option</option>
-            <option value="Activity API Demo">Activity API Demo</option>
-            <option value="Eligibility Only">Eligibility Only</option>
-          </select>
         </div>
       </div>
 
@@ -60,44 +37,65 @@
         </div>
       </div>
 
-      <div id="subgroup-details" class="row">
+      <div class="row">
         <div class="col">
-          <label for="subgroup-column">Subgroup Column</label><br/>
-          <input id="subgroup-column" type="text" placeholder="Default text">
-        </div>
-
-        <div class="col">
-          <label for="subgroup-value">Subgroup Value</label><br/>
-          <input id="subgroup-value" type="text" placeholder="Default text">
+          <select id="main-select" class="custom-select">
+            <option selected>Select an Option</option>
+            <option value="Activity API Demo">Activity API Demo</option>
+            <option value="Eligibility Only">Eligibility Only</option>
+          </select>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="btn btn-secondary">Upload Activity</div>
+      <div id="activity-details">
+        <div class="row">
+          <div class="col">
+            <label for="partner-token">Partner Token</label><br/>
+            <input id="partner-token" type="text" placeholder="Default text">
+          </div>
+          <div class="col">
+            <label for="event-code">EventCode</label><br/>
+            <input id="event-code" type="text" placeholder="Default text">
+          </div>
         </div>
-        <div class="col">
-          <div id="update-subgroup" class="btn btn-secondary">Update Subgroup</div>
+
+        <div class="row">
+          <div class="col">
+            <div id="auth" class="btn btn-secondary">Get Auth Token</div>
+          </div>
+          <div class="col">
+            <div id="track" class="btn btn-secondary">Track Event for User</div>
+          </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <div id="auth" class="btn btn-secondary">Get Auth Token</div>
+      <div id="subgroup-details">
+        <div class="row">
+          <div class="col">
+            <label for="subgroup-column">Subgroup Column</label><br/>
+            <input id="subgroup-column" type="text" placeholder="Default text">
+          </div>
+          <div class="col">
+            <label for="subgroup-value">Subgroup Value</label><br/>
+            <input id="subgroup-value" type="text" placeholder="Default text">
+          </div>
         </div>
-        <div class="col">
-          <div id="track" class="btn btn-secondary">Track Event for User</div>
+
+        <div class="row">
+          <div class="col">
+            <div id="update-subgroup" class="btn btn-secondary">Update Subgroup</div>
+          </div>
         </div>
       </div>
 
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="user-modal-label" aria-hidden="true">
+    <div class="modal fade" id="response-modal" tabindex="-1" role="dialog" aria-labelledby="response-modal-label" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="user-modal-label">User</h5>
+            <h5 class="modal-title" id="response-modal-label">User</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
