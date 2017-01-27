@@ -7,7 +7,7 @@
 		'psk' => $_POST['psk'],
 		'data' => $_POST['data'],
 		'format' => 'csv',
-		'type' => 'challenges',
+		'type' => 'identity',
 		'response' => 'json'
 	);
 

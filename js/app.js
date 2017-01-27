@@ -91,7 +91,25 @@ $('#main-select').change(() => {
     default:
       break;
   }
-})
+});
+
+$('#update-subgroup').click(() => {
+  const participantCode =  $('#participant-code').val();
+  const subgroupColumn = $('#subgroup-column').val();
+  const subgroupValue = $('#subgroup-value').val();
+
+  const data = `ParticipantCode,${subgroupColumn}\n${participantCode},${subgroupValue}`;
+
+  const url = 'api/upload/';
+  const params = {
+    e: $('#employer-name').val(),
+    psk: $('#psk').val(),
+    data: data
+  };
+  $.post(url, params).done((data) => {
+    console.log(data);
+  });
+});
 
 const IAe = 'WellmetricsDemo';
 const IApsk = 'b3dda09c-1317-433c-9809-359ce8f2f61f';
