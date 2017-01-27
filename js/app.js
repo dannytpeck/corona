@@ -1,4 +1,4 @@
-$('#oauth').click(() => {
+$('#auth').click(() => {
   const url = 'https://api.limeade.com/identity/connect/token';
   const params = {
     grant_type: 'password',
@@ -23,57 +23,21 @@ $('#search-pcode').click(() => {
   };
   $.post(url, params).done((data) => {
     const response = JSON.parse(data);
-
     if (response.status === 'success') {
-      $('#user-modal .modal-body').html(`
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Field</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">participantcode</th>
-              <td>${response.participantcode}</td>
-            </tr>
-            <tr>
-              <th scope="row">username</th>
-              <td>${response.username}</td>
-            </tr>
-            <tr>
-              <th scope="row">email</th>
-              <td>${response.email}</td>
-            </tr>
-            <tr>
-              <th scope="row">firstName</th>
-              <td>${response.firstName}</td>
-            </tr>
-            <tr>
-              <th scope="row">lastName</th>
-              <td>${response.lastName}</td>
-            </tr>
-            <tr>
-              <th scope="row">employeeID</th>
-              <td>${response.employeeID}</td>
-            </tr>
-            <tr>
-              <th scope="row">birthDate</th>
-              <td>${response.birthDate}</td>
-            </tr>
-          </tbody>
-        </table>
-      `);
+      $('#employee-id').css({
+        'background-color': 'white',
+        'border-color': 'initial',
+        'color': 'initial'
+      });
+      $('#employee-id').val(response.employeeID);
     } else {
-      $('#user-modal .modal-body').html(`
-        <div class="alert alert-danger" role="alert">
-          Invalid Employer Name, PSK and/or Participant Code.
-        </div>
-      `);
+      $('#employee-id').css({
+        'border-color': '#ebcccc',
+        'background-color': '#f2dede',
+        'color': '#a94442'
+      });
+      $('#employee-id').val('Invalid Employer Name, PSK and/or Participant Code.');
     }
-
-    $('#user-modal').modal('show');
     console.log(response);
   });
 
@@ -107,10 +71,60 @@ $('#update-subgroup').click(() => {
     data: data
   };
   $.post(url, params).done((data) => {
-    console.log(data);
+    const response = JSON.parse(data);
+    console.log(response);
   });
 });
 
 const IAe = 'WellmetricsDemo';
 const IApsk = 'b3dda09c-1317-433c-9809-359ce8f2f61f';
 const DannyPCode = 'eb4a90da-37f5-44ec-9147-ce98b2859cfd';
+
+
+// $('#user-modal .modal-body').html(`
+//   <table class="table table-striped">
+//     <thead>
+//       <tr>
+//         <th>Field</th>
+//         <th>Value</th>
+//       </tr>
+//     </thead>
+//     <tbody>
+//       <tr>
+//         <th scope="row">participantcode</th>
+//         <td>${response.participantcode}</td>
+//       </tr>
+//       <tr>
+//         <th scope="row">username</th>
+//         <td>${response.username}</td>
+//       </tr>
+//       <tr>
+//         <th scope="row">email</th>
+//         <td>${response.email}</td>
+//       </tr>
+//       <tr>
+//         <th scope="row">firstName</th>
+//         <td>${response.firstName}</td>
+//       </tr>
+//       <tr>
+//         <th scope="row">lastName</th>
+//         <td>${response.lastName}</td>
+//       </tr>
+//       <tr>
+//         <th scope="row">employeeID</th>
+//         <td>${response.employeeID}</td>
+//       </tr>
+//       <tr>
+//         <th scope="row">birthDate</th>
+//         <td>${response.birthDate}</td>
+//       </tr>
+//     </tbody>
+//   </table>
+// `);
+// } else {
+// $('#user-modal .modal-body').html(`
+//   <div class="alert alert-danger" role="alert">
+//     Invalid Employer Name, PSK and/or Participant Code.
+//   </div>
+// `);
+// }

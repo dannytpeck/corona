@@ -45,7 +45,7 @@
       </div>
 
       <div class="row">
-        <div class="col-6">
+        <div class="col">
           <label for="participant-code">ParticipantCode</label><br/>
           <div class="input-group">
             <input id="participant-code" type="text" class="form-control" placeholder="Default text">
@@ -53,6 +53,10 @@
               <button id="search-pcode" class="btn btn-secondary" type="button">Find</button>
             </span>
           </div>
+        </div>
+        <div class="col">
+          <label for="employee-id">Employee ID</label><br/>
+          <input id="employee-id" type="text" placeholder="Default text">
         </div>
       </div>
 
@@ -79,7 +83,7 @@
 
       <div class="row">
         <div class="col">
-          <div id="oauth" class="btn btn-secondary">Get Auth Token</div>
+          <div id="auth" class="btn btn-secondary">Get Auth Token</div>
         </div>
         <div class="col">
           <div id="track" class="btn btn-secondary">Track Event for User</div>

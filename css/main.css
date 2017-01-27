@@ -26,3 +26,11 @@ input {
 #subgroup-details {
   display: none;
 }
+
+#participant-code, #search-pcode {
+  height: 30px;
+}
+
+#search-pcode {
+  padding-top: 4px;
+}
