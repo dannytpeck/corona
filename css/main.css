@@ -15,6 +15,14 @@ input {
   width: 50%;
 }
 
+.input-group {
+  width: 62%;
+}
+
 .row {
   margin: 20px 0;
+}
+
+#subgroup-details {
+  display: none;
 }

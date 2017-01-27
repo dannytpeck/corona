@@ -36,10 +36,10 @@
 
       <div class="row">
         <div class="col">
-          <select class="custom-select">
+          <select id="main-select" class="custom-select">
             <option selected>Select an Option</option>
-            <option value="Full Demo">Full Demo</option>
             <option value="Activity API Demo">Activity API Demo</option>
+            <option value="Eligibility Only">Eligibility Only</option>
           </select>
         </div>
       </div>
@@ -47,7 +47,24 @@
       <div class="row">
         <div class="col-6">
           <label for="participant-code">ParticipantCode</label><br/>
-          <input id="participant-code" type="text" placeholder="Default text">
+          <div class="input-group">
+            <input id="participant-code" type="text" class="form-control" placeholder="Default text">
+            <span class="input-group-btn">
+              <button id="search-pcode" class="btn btn-secondary" type="button">Find</button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div id="subgroup-details" class="row">
+        <div class="col">
+          <label for="subgroup-column">Subgroup Column</label><br/>
+          <input id="subgroup-column" type="text" placeholder="Default text">
+        </div>
+
+        <div class="col">
+          <label for="subgroup-value">Subgroup Value</label><br/>
+          <input id="subgroup-value" type="text" placeholder="Default text">
         </div>
       </div>
 
@@ -60,25 +77,38 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="col">
+          <div id="oauth" class="btn btn-secondary">Get Token via OAuth</div>
+        </div>
+        <div class="col">
+          <div id="track" class="btn btn-secondary">Track Event for User</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Upload Modal -->
-    <div class="modal fade" id="upload-modal" tabindex="-1" role="dialog" aria-labelledby="upload-modal-label">
+    <!-- Modal -->
+    <div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="user-modal-label" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="my-modal-label">Upload Log</h4>
+            <h5 class="modal-title" id="user-modal-label">User</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="modal-body" id="upload-modal-body"></div>
+          <div class="modal-body">
+            ...
+          </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
