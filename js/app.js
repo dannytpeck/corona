@@ -65,18 +65,23 @@ $('#update-subgroup').click(() => {
 });
 
 $('#auth').click(() => {
-  const url = 'https://api.limeade.com/identity/connect/token';
+  const url = 'api/auth/';
+  $.post(url).done((data) => {
+    console.log(data);
+    const response = JSON.parse(data);
+    $('#partner-token').val(response.access_token);
+  });
+});
+
+$('#track').click(() => {
+  const url = 'api/tracking/';
   const params = {
-    grant_type: 'password',
-    scope: 'openid apiaccess',
-    username: 'adurotrackinguser',
-    password: 'partner1!',
-    client_id: 'partner_integration_aduro',
-    client_secret: 'aduro#PRD$p@rtn3rIK'
+    token: $('#partner-token').val(),
+    participantcode: $('#participant-code').val(),
+    eventcode: $('#event-code').val()
   };
   $.post(url, params).done((data) => {
     console.log(data);
-    $('#partner-token').val(data.access_token);
   });
 });
 
