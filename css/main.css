@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 
 *, *:before, *:after {
@@ -15,6 +16,15 @@ input {
   width: 50%;
   border: 1px solid rgba(0,0,0,.15);
   border-radius: .25rem;
+}
+
+.navbar {
+  background-color: #488130;
+  color: #FFFFFF;
+  width: 100%;
+  font-family: 'Lobster', cursive;
+  font-size: 1.5em;
+  padding: 0 1em 0 1em;
 }
 
 .input-group {
