@@ -30,8 +30,14 @@ input {
   padding: 0.5rem 0 0.5rem 1.5rem;
 }
 
-.container {
+.modal-header {
+  background-color: #488130;
+  color: #fff;
+  font-family: 'Lobster', cursive;
+}
 
+.modal-header .close {
+  color: #fff;
 }
 
 .input-group {

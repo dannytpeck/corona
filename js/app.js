@@ -81,7 +81,10 @@ $('#track').click(() => {
     eventcode: $('#event-code').val()
   };
   $.post(url, params).done((data) => {
-    console.log(data);
+    const response = JSON.parse(data);
+    $('#response-modal .modal-body').html(data);
+    $('#response-modal').modal('show');
+    console.log(response);
   });
 });
 
