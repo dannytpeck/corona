@@ -87,5 +87,3 @@ $('#track').click(() => {
     console.log(response);
   });
 });
-
-const myParticipantCode = 'eb4a90da-37f5-44ec-9147-ce98b2859cfd';

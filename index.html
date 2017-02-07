@@ -15,20 +15,20 @@
   </head>
   <body>
 
-        <nav class="navbar navbar-inverse navbar-toggleable-md">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="images/logo/Corona-logo.png" alt="Corona logo"></a>
+    <nav class="navbar navbar-inverse navbar-toggleable-md">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="images/logo/Corona-logo.png" alt="Corona logo"></a>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Corona <span class="sr-only">(current)</span></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Corona <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <div class="container">
 
@@ -39,30 +39,9 @@
       </div>
 
       <div class="row">
-
-        <div class="col">
-          <label for="employer-name">EmployerName</label><br/>
-          <input id="employer-name" type="text">
-        </div>
-        <div class="col">
-          <label for="psk">PSK</label><br/>
-          <input id="psk" type="text">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
+        <div class="col-6">
           <label for="participant-code">ParticipantCode</label><br/>
-          <div class="input-group">
-            <input id="participant-code" type="text" class="form-control">
-            <span class="input-group-btn">
-              <button id="search-pcode" class="btn btn-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </span>
-          </div>
-        </div>
-        <div class="col">
-          <label for="employee-id">Employee ID</label><br/>
-          <input id="employee-id" type="text">
+          <input id="participant-code" type="text">
         </div>
       </div>
 
@@ -79,12 +58,12 @@
       <div id="activity-details">
         <div class="row">
           <div class="col">
-            <label for="partner-token">Partner Token</label><br/>
-            <input id="partner-token" type="text">
-          </div>
-          <div class="col">
             <label for="event-code">EventCode</label><br/>
             <input id="event-code" type="text">
+          </div>
+          <div class="col">
+            <label for="event-date">Date</label><br/>
+            <input id="event-date" type="date">
           </div>
         </div>
 
@@ -99,6 +78,16 @@
       </div>
 
       <div id="subgroup-details">
+        <div class="row">
+          <div class="col">
+            <label for="employer-name">EmployerName</label><br/>
+            <input id="employer-name" type="text">
+          </div>
+          <div class="col">
+            <label for="psk">PSK</label><br/>
+            <input id="psk" type="text">
+          </div>
+        </div>
         <div class="row">
           <div class="col">
             <label for="subgroup-column">Subgroup Column</label><br/>
