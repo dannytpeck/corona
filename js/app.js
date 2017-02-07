@@ -14,35 +14,6 @@ $('#main-select').change(() => {
   }
 });
 
-$('#search-pcode').click(() => {
-  const url = 'api/user/';
-  const params = {
-    e: $('#employer-name').val(),
-    psk: $('#psk').val(),
-    participantcode: $('#participant-code').val()
-  };
-  $.post(url, params).done((data) => {
-    const response = JSON.parse(data);
-    if (response.status === 'success') {
-      $('#employee-id').css({
-        'background-color': 'white',
-        'border-color': 'initial',
-        'color': 'initial'
-      });
-      $('#employee-id').val(response.employeeID);
-    } else {
-      $('#employee-id').css({
-        'border-color': '#ebcccc',
-        'background-color': '#f2dede',
-        'color': '#a94442'
-      });
-      $('#employee-id').val('Invalid Employer Name, PSK and/or Participant Code.');
-    }
-    console.log(response);
-  });
-
-});
-
 $('#update-subgroup').click(() => {
   const participantCode =  $('#participant-code').val();
   const subgroupColumn = $('#subgroup-column').val();
@@ -74,16 +45,23 @@ $('#auth').click(() => {
 });
 
 $('#track').click(() => {
-  const url = 'api/tracking/';
-  const params = {
-    token: $('#partner-token').val(),
-    participantcode: $('#participant-code').val(),
-    eventcode: $('#event-code').val()
-  };
-  $.post(url, params).done((data) => {
+  const url = 'api/auth/';
+  $.post(url).done((data) => {
+    const date = moment($('#event-date').val()).format('MM-DD-YYYY');
+
+    console.log(data);
     const response = JSON.parse(data);
-    $('#response-modal .modal-body').html(data);
-    $('#response-modal').modal('show');
-    console.log(response);
+    const url = 'api/tracking/';
+    const params = {
+      token: response.access_token,
+      participantcode: $('#participant-code').val(),
+      eventcode: $('#event-code').val(),
+      eventdate: date
+    };
+    $.post(url, params).done((data) => {
+      const response = JSON.parse(data);
+      $('#response-modal .modal-body').html(data);
+      $('#response-modal').modal('show');
+    });
   });
 });
